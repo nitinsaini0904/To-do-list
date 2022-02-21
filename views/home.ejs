@@ -1,0 +1,102 @@
+<html>
+
+    <head>
+        <title>
+            <%= title %>
+        </title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js  "></script> -->
+        <!-- Css Link  -->
+        <link rel="stylesheet" href="../assets/">
+    </head>
+
+    <body>
+<section class="container">
+        <h1 id="main-heading" align="center">TO-DO APP</h1>
+
+            <!-- form to create tasks -->
+
+        <form action="/create-task" method="POST">
+
+            <table class="table">
+                <thead>
+                  <tr class="table-secondary">
+                    <th scope="col"> Add Task</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Due date</th>
+                    <th></th>
+
+                  </tr>
+                </thead>
+
+            <!-- Adding options in category section -->
+
+                <tbody>
+
+                    <tr>
+                        <!-- Adding task decription  -->
+                      <td> <input class="placeholder col-10" type="text" name="description"placeholder="What do you need to do?" required></input></th>
+                        <!-- Categories Section -->
+
+                      <td > <select class="category" name="category" required>
+                        <option>PERSONAL</option>
+                        <option>WORK</option>
+                        <option>COLLEGE</option>
+                        <option>CODING</option>
+                        <option>OTHER</option>
+                    </select>
+                </th>
+<!-- Adding add task button  -->
+                      <td > <input class="date"  type="date" name="date" required></th>
+                      <td ><input type="submit"  class="btn btn-success"id="add" value="ADD TASK"></th>
+                    </tr>
+                </tbody>
+            </table>
+
+</form>
+    </section>
+
+    <!-- Deleting tasks -->
+        <div>
+                <h1 align="center">TASKS LIST</h1>
+
+            <form id="main-from" action="/delete-task" method="GET">
+                <table class="table table-hover table-dark">
+                    <thead  class="thead-light">
+                        <tr>
+                            <th>Task</th>
+                            <th>Category</th>
+                            <th>Due-Date</th>
+                            <th class="select">Select</th>
+                        </tr>
+                    </thead>
+        <% for(let i of task) { %>
+
+        <tr>
+            <td id="Task-description"> <p id="Task-description"><%= i.description %></td>
+            <td id="Task-category"><p id="Task-category"></p><%= i.category %></td>
+            <td><p id="Due-date"><%= i.date %></p></td>
+            <td> <input class="form-check-input" type="checkbox" name="<%= i._id %>" ></td>
+        </tr>
+
+        <% } %>
+
+</table>
+<!-- Adding delete button -->
+
+            <div  align = "center"><input type="submit" class="btn btn-danger" value="DELETE TASK">
+
+            </div>
+    </form>
+
+
+            </div>
+
+             <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+
+</html>

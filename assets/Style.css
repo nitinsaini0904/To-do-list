@@ -1,0 +1,41 @@
+body{
+  margin: 0px;
+}
+/* Adding style to main adding */
+#main-heading{
+  margin-top: 10px;
+  box-shadow: 0px 4px 12px 1px #000000;
+
+}
+.table{
+  margin-top: 15px;
+  box-shadow: 0px 4px 12px 1px #000000;
+
+}
+.table-secondary{
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+#Task-description{
+  text-transform: capitalize;
+  font-family: sans-serif;
+}
+#Task-category{
+  margin-top: -16px;
+ 
+}
+#main-from{
+  position: relative;
+  width: 90%;
+  margin-left:5%;
+  margin-top: 2%;
+}
+.select{
+  position: absolute;
+  right: 0%;
+}
+/* Adding border to categories used in adding task */
+.placeholder, .category ,.date{
+  border: 1.7px solid black;
+}
+
