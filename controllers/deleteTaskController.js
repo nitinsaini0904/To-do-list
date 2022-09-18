@@ -6,6 +6,7 @@ module.exports.deleteTask = function(req,res){
   // get the id from query
   let id = req.query;
 
+  
   // find number of tasks to be deleted
   var count = Object.keys(id).length;
 
